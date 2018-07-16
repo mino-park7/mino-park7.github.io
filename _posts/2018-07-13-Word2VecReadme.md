@@ -52,10 +52,9 @@ title: 한고원 데이터사전 Word2Vec README
 
 결과 image
 <p align="center">
-<img src="./images/tsne.png">
+<img src="../assets/posts/word2vecREADME/saramin_nltk.png">
 </p>
 
-[tsne.png](./images/tsne.png)
 
 ## `word2vec_saram.sh`
 
