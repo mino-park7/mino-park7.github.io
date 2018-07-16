@@ -52,7 +52,7 @@ title: 한고원 데이터사전 Word2Vec README
 
 결과 image
 <p align="center">
-<img src="/assets/posts/word2vecREADME/saramin_nltk.png">
+<img src='{{ "/assets/posts/word2vecREADME/saramin_nltk.png" | relative_url }}' alt='absolute'>
 </p>
 
 
