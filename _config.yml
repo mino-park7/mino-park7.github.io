@@ -1,0 +1,60 @@
+# Site Info
+title: MinhoPark
+tagline: 'NLP Blog'
+description: 'blog for NLP'
+url: http://mino-park7.github.io
+# logo: '/public/logo.png'
+encoding: utf-8
+
+# Site configurations
+plugins:
+  - jekyll-paginate
+markdown: kramdown
+kramdown:
+  input: GFM
+excerpt_separator: "<!-- more -->"
+sass:
+  style: compressed
+  sass_dir: _scss    
+paginate: 5
+paginate_path: '/blog/page:num'
+permalink: pretty
+version: 1.0.0
+
+# About/contact
+author:
+  name: mino-park7
+  description: 자발적 자기계발
+  gravatar: 77742461949256e64870ff5bfa05e49a # md5 hash of your email address
+  contact:
+    linkedin:  https://www.linkedin.com/in/minho-park-804a56142/
+    github:    https://github.com/mino-park7
+    facebook:  <hide>
+    #twitter:  <hide>
+    #weibo:    <hide>
+    email:     mailto:minho.park2115@gmail.com
+
+# Navigation (2nd level links supported)
+nav:
+  Home:           
+    - '/'
+  Contents:           
+    - '/blog/'
+    - { Categories: '/blog/categories/' }
+    - { Tags: '/blog/tags/' }
+  About:          
+    - '/about/'
+
+# Where are tags and categories displayed
+tag_page: '/blog/tags/'
+category_page: '/blog/categories/'
+
+# hero:
+#  image: https://ratsgo.github.io/public/img/picture.JPG
+#  caption: Original Artwork &copy; Pablo Picasso. Girl before a Mirror. Boisgeloup, March 1932. Oil on canvas
+
+# Puglins
+# mathjax: true # whether support mathjax
+# google_analytics_token: 'UA-93172815-1' # leave blank if you don't want google analytics
+# disqus_short_name: 'ratsgo-github-io' # leave blank if you don't want disqus
+

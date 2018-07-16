@@ -1,0 +1,22 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+# relative_permalinks: true
+
+# Setup
+title:               Minho Park
+tagline:             'NLP Blog'
+description:         'NLP 스터디, 프로젝트 정리 블로그입니다.'
+# url:                 h
+baseurl:             ""
+paginate:            5
+
+# About/contact
+author:
+  name:              MinhoPark
+  url:               https://github.com/mino-park7
+  email:             minho.park2115@gmail.com
+
+# Custom vars
+version:             1.0.0
