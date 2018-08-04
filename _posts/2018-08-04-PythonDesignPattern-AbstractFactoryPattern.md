@@ -27,25 +27,25 @@ tag: python, designpattern
 
 ***
 
-![동일부분](https://github.com/mino-park7/mino-park7.github.io/tree/master/_posts/assets/markdown-img-paste-20180804150908111.png)
+![동일부분]({{site-url}}/assets/posts/PythonInPractice/markdown-img-paste-20180804150908111.png)
 * diagram1.py 와 diagram2.py 의 동일 부분을 보자. 공통적으로 txtDiagram과 svgDiagram을 생성하여 save한다.
 
 ***
 
-![create-diagram at diagram1.py](https://github.com/mino-park7/mino-park7.github.io/tree/master/_posts/assets/markdown-img-paste-20180804151338458.png)
+![create-diagram at diagram1.py]({{site-url}}/assets/posts/PythonInPractice/markdown-img-paste-20180804151338458.png)
 
 * 위 함수는 diagram factory 만을 받아 이를 활용해 요청받은 다이어그램을 생
 * 다이어그램 팩터리 인터페이스(make_diagram, make_rectangle, make_text...의 def를 지원)를 지원하는 한 어떤 종류의 팩터리를 인자로 받은 관계 없음
 
 ***
 
-![DiagramFactory](https://github.com/mino-park7/mino-park7.github.io/tree/master/_posts/assets/markdown-img-paste-20180804152116807.png)
+![DiagramFactory]({{site-url}}/assets/posts/PythonInPractice/markdown-img-paste-20180804152116807.png)
 
 * 패턴 이름에 **추상**이란 단어가 포함돼 있음에도 한 클래스가 인터페이스를 지원하는 기반 클래스이자 그 자체로 구상 클래스인 경우는 흔히 접할 수 있다. (DiagramFactory 클래스가 기반 클래스이지만, 내부에 모든 def가 구현되어 있음) ([추상클래스? 구상클래스? 정리본](http://e2xist.tistory.com/581) )
 
 ***
 
-![SvgDiagramFactory](https://github.com/mino-park7/mino-park7.github.io/tree/master/_posts/assets/markdown-img-paste-20180804153605407.png)
+![SvgDiagramFactory]({{site-url}}/assets/posts/PythonInPractice/markdown-img-paste-20180804153605407.png)
 * DiagramFactory의 make_diagram() 과의 유일한 차이점은 SvgDiagram 객체를 반환한다는 것 뿐이다. 나머지 메서에도 동일하다
 
 ***
@@ -76,7 +76,7 @@ tag: python, designpattern
 
 ***
 
-![DiagramFactory classmetho](https://github.com/mino-park7/mino-park7.github.io/tree/master/_posts/assets/markdown-img-paste-20180804161349402.png)
+![DiagramFactory classmetho]({{site-url}}/assets/posts/PythonInPractice/markdown-img-paste-20180804161349402.png)
 * `make_...()` 메서드는 이제 모두 *클래스메서드*이다.
   - 이는 이 메서드를 호출할 때 (일반 메서드에 self가 전달되는 것과 달리) 첫 번째 인자로 **클래스 정보**를 전달한다는 것을 의미
   - 따라서 `DiagramFactory.make_text()`를 호출하면 DiagramFactory가 Class 값으로 전달되 `DiagramFactory.Text` 객체가 생성되어 반환된다.
@@ -88,6 +88,6 @@ tag: python, designpattern
 * 나머지 코드는 이전과 거의 동일하다. 핵심적인 변경사항은 이제 상수값과 팩터리가 아닌 클래스들이 모두 팩터리 안에 내장됐으므로 앞으로 이것들을 사용하려면 팩터리 이름을 붙여야 한다는 것이다.
 
 
-![SvgText와 SvgDiagramFactory.Text](https://github.com/mino-park7/mino-park7.github.io/tree/master/_posts/assets/markdown-img-paste-20180804162902512.png)
+![SvgText와 SvgDiagramFactory.Text]({{site-url}}/assets/posts/PythonInPractice/markdown-img-paste-20180804162902512.png)
 
 * 위와 같이 변경되었다.
