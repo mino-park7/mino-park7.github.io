@@ -18,14 +18,14 @@ tag: 'python, designpattern'
 ***
 
 가장먼저 최상위 코드
-![highest code](https://mino-park7.github.com/assets/images/2018/08/highest-code.png)
+![highest code](https://mino-park7.github.io/assets/images/2018/08/highest-code.png)
 
 * 각 폼을 생성한 후 파일에 저장
 * 두 경우 모두 동일한 생성함수 `create_login_form()` 에 적절한 빌더 객체를 인자로 전달해 호출
 
 ***
 
-![create_login_form](https://mino-park7.github.com/assets/images/2018/08/create-login-form.png)
+![create_login_form](https://mino-park7.github.io/assets/images/2018/08/create-login-form.png)
 
 * `create_login_form()`함수는 임의의 HTML이나 Tkinter 폼을 생성할 수 있다. 또는 알맞은 빌더만 있다면 어떤 종류의 폼이든 생성 가능하다.
 
@@ -33,7 +33,7 @@ tag: 'python, designpattern'
 
 HtmlFormBuilder와 TkFormBuilder 모두 추상 기반 클래스인 AbstractFormBuilder를 상속한다.
 
-![ABSFormBuilder](https://mino-park7.github.com/assets/images/2018/08/absformbuilder.png)
+![ABSFormBuilder](https://mino-park7.github.io/assets/images/2018/08/absformbuilder.png)
 
 * 이 클래스를 상속하는 클래스는 추상 메서드를 모두 구현해야 한다.
 * 참고로 `AbstractFormBuilder`는 `abs.ABCMeta` 메타클래스를 받아 abs 모듈의 @abstractmethod 데코레이터를 사용한다
