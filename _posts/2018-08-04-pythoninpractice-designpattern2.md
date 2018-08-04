@@ -6,4 +6,6 @@ category: python Study
 tag: python, designpattern
 ---
 
-## 2. 빌더 ![hello](../assets/hello.png)
+## 2. 빌더 패턴
+
+![tet1](assets/tet1.png)
