@@ -36,4 +36,26 @@ HtmlFormBuilder와 TkFormBuilder 모두 추상 기반 클래스인 AbstractFormB
 ![ABSFormBuilder](https://mino-park7.github.io/assets/images/2018/08/absformbuilder.png)
 
 * 이 클래스를 상속하는 클래스는 추상 메서드를 모두 구현해야 한다.
-* 참고로 `AbstractFormBuilder`는 `abs.ABCMeta` 메타클래스를 받아 abs 모듈의 @abstractmethod 데코레이터를 사용한다
+* 참고로 `AbstractFormBuilder`는 `abc.ABCMeta` 메타클래스를 받아 abs 모듈의 @abstractmethod 데코레이터를 사용한다
+* 어떤 클래스에 `abc.ABCMeta`의 메타클래스를 전달하면 해달 클래스의 인스턴스를 만들 수 없기 때문에 추상 기반 클래스로만 사용해야 한다.
+* 이는 C++ 나 자바에서 이식된 코드에 유의미하나, 실행 시 약간의 비용이 더 든다.
+* 하지만 대다수의 파이썬 프로그래머는 문제가 될 수 있는 더 안일한 방법을 활용 -> 메타클래스를 활용하지 않고, 해당 클래스를 추상 기반 클래스로 사용해야 한다고 문서화 함
+
+***
+
+![HtmlFormBuilder](https://mino-park7.github.io/assets/images/2018/08/htmlformbuilder.png)
+
+* `add_title()` 메서드는 추상 메서드 이므로 재구현(reimplement)해야 한다. 그러나 원래의 추상 메서드에도 구현 코드가 있으므로, 그 메서드를 호출해 처리한다 (`super.add_title`) (`escape` 는 html module에 있는 메서드)
+
+***
+
+![HtmlFormBuilder.form](https://mino-park7.github.io/assets/images/2018/08/htmlformbuilder-form.png)
+
+* `HtmlFormBuilder.form()` 메서드는 HTML페이지를 생성한다. 
+
+***
+
+![TkFormBuilder](https://mino-park7.github.io/assets/images/2018/08/tkformbuilder.png)
+
+* 위 코드는 TkFormBuilder 클래스의 일부다.
+*
