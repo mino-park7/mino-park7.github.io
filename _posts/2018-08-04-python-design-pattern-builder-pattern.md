@@ -51,7 +51,7 @@ HtmlFormBuilder와 TkFormBuilder 모두 추상 기반 클래스인 AbstractFormB
 
 ![HtmlFormBuilder.form](https://mino-park7.github.io/assets/images/2018/08/htmlformbuilder-form.png)
 
-* `HtmlFormBuilder.form()` 메서드는 HTML페이지를 생성한다. 
+* `HtmlFormBuilder.form()` 메서드는 HTML페이지를 생성한다.
 
 ***
 
