@@ -2,7 +2,7 @@
 layout: post
 title: 한고원 데이터사전 Word2Vec README
 category: Projects
-tag: (word2vec)
+tag: [word2vec]
 ---
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: 파이썬 디자인 패턴 - 생성 디자인 패턴 - 추상 팩터리 패턴
 category: python Study
-tag: (python, designpattern)
+tag: [python, designpattern]
 ---
 
 

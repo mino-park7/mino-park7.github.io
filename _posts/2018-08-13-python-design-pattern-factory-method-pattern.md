@@ -3,7 +3,7 @@ layout: "post"
 title: "파이썬 디자인 패턴 - 생성 디자인 패턴 - 팩터리 메서드 패턴"
 date: "2018-08-13 23:08"
 category: python Study
-tag: (python, designpattern)
+tag: [python, designpattern]
 ---
 
 
