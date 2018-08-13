@@ -58,4 +58,5 @@ HtmlFormBuilder와 TkFormBuilder 모두 추상 기반 클래스인 AbstractFormB
 ![TkFormBuilder](https://mino-park7.github.io/assets/images/2018/08/tkformbuilder.png)
 
 * 위 코드는 TkFormBuilder 클래스의 일부다.
-*
+* `add_label()` 메서드의 구조를 `add_entry()` , `add_button()`에도 똑같이 활용한다.
+  - 메서드는 먼저 위젯의 정식 명칭을 가져온 다음, 문자열 2개를 만든다. ....
