@@ -2,7 +2,7 @@
 layout: post
 title: 한고원 데이터사전 Word2Vec README
 category: Projects
-tag: word2vec
+tag: (word2vec)
 ---
 
 
@@ -111,4 +111,3 @@ PLOT_ONLY의 경우 plot 내에 찍어주는 dot의 양 조절 가능
 
 reverse_dictionary.pkl, embedding.pkl을 받아서 사용자가 지정한 단어와 가장 가까운 n개의 단어, cosine similiarity를 찾아주고, 다시 그 가까운 단어들의 가까운 n개의 단어와 cosine similiarity를 찾아서 namedtuple pickle, csv 파일로 저장해준다.
 <!---->
-

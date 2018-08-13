@@ -3,7 +3,7 @@ layout: post
 title: Python Design Pattern - Builder Pattern
 date: '2018-08-04 18:54'
 category: python Study
-tag: 'python, designpattern'
+tag: (python, designpattern)
 ---
 
 ## 2. 빌더 패턴
