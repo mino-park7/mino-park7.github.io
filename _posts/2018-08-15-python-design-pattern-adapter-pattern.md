@@ -2,7 +2,7 @@
 layout: "post"
 title: "파이썬 디자인 패턴 - 구조디자인패턴 - 어댑터 패턴"
 date: "2018-08-15 15:45"
-ategory: python Study
+category: python Study
 tag: [python, designpattern, 구조디자인패턴]
 ---
 
