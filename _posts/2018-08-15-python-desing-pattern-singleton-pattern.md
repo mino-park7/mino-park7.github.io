@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "파이썬 디자인 패턴 - 생성디자인패턴 - 싱글턴 패턴"
+title: "파이썬 디자인 패턴 - 생성디자인패턴 - 싱글턴 패턴 + 파이썬 생성디자인 패턴 정리"
 date: "2018-08-15 15:23"
 category: python Study
 tag: [python, designpattern]
