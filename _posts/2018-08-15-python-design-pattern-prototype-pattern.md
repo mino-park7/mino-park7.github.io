@@ -3,7 +3,7 @@ layout: "post"
 title: "파이썬 디자인 패턴 - 생성디자인패턴 - 프로토타입 패턴"
 date: "2018-08-15 14:27"
 category: python Study
-tag: [python, designpattern]
+tag: [python, designpattern, 생성디자인패턴]
 ---
 
 
