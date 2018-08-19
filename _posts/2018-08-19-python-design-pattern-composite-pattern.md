@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "파이썬 디자인 패턴 - 구조디자인패턴 - 브리지 패턴"
+title: "파이썬 디자인 패턴 - 구조디자인패턴 - 컴포지트 패턴"
 date: "2018-08-19 17:02"
 category: python Study
 tag: [python, designpattern, 구조디자인패턴]
