@@ -15,7 +15,7 @@ tag: [python, designpattern, 생성디자인패턴]
 
 ***
 
-## 1. 추상 팩터리 패턴
+## 1-1. 추상 팩터리 패턴
 
 * 여러 객체로 구성된 복합 객체를 만들어야 하는데, 포함된 객체가 모두 틀별한 한 **계통** 일 때 사용 가능.
 * 예를 들어, Mac, Xfce, Window에서 위젯을 만들어주는 3 개의 concrete subclass factory 가 있는 Abstract widget factory가 있다고하자.
@@ -56,7 +56,7 @@ tag: [python, designpattern, 생성디자인패턴]
 
 ***
 
-### 1.2 더 파이썬다운 추상 팩터리
+### 1-1-2. 더 파이썬다운 추상 팩터리
 
 ***
 

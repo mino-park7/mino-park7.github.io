@@ -6,7 +6,7 @@ category: python Study
 tag: [python, designpattern, 생성디자인패턴]
 ---
 
-## 2. 빌더 패턴
+## 1-2. 빌더 패턴
 
 ***
 
