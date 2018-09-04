@@ -45,11 +45,13 @@ sys.version_info(major=3, minor=4, micro=2, releaselevel='final', serial=0)
 * 새로 프로젝트를 실행한다면 파이썬 3 사용을 적극 추천
 
 ---
+
 * **핵심정리**
   * 파이썬의 주요 버전인 파이썬2, 3 모두 활발히 사용됨
   * 파이썬에는 CPython, Jython, IronPython, PyPy 같은 다양한 런타임이 존재함
-  * 시스템에서 파이썬을 실행하는 명령이 사용하고자 하는 파이썬 버전인지 확이 필요
+  * 시스템에서 파이썬을 실행하는 명령이 사용하고자 하는 파이썬 버전인지 확인 필요
   * 파이썬 3 추천
+
 ---
 
 ## 추가 정리 - python runtime
