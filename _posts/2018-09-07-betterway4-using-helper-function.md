@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "이펙티브 파이썬 - 3. 복잡한 표현식 대신 헬퍼 함수를 작성하자"
+title: "이펙티브 파이썬 - 4. 복잡한 표현식 대신 헬퍼 함수를 작성하자"
 date: "2018-09-07 20:34"
 category: effective python Study
 tag: [python, effective,]
