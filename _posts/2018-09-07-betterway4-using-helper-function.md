@@ -36,6 +36,7 @@ Opacity:  None
 
 - 이때 파라미터가 없거나 비어 있으면 기본값으로 0을 할당하게 하면 좋을 것 같다
 - 사용하는 트릭은 **빈 문자열, 빈 리스트, 0이 모두 암시적으로 `False`로** 평가되는 것
+
 ```python
 red = my_values.get('red', [''])[0] or 0
 green = my_values.get('green', [''])[0] or 0
@@ -59,12 +60,14 @@ Opacity: 0
 - 하지만 이 표현식의 문제점은
   - 읽기 어렵다
   - 필요한 작업을 다 수행하지도 않음 : 모든 파라미터 값이 정수가 되도록 해야함, `int` 사용 필요
+
 ```python
 red = int(my_values.get('red', [''])[0] or 0)
 ```
 
     - 이것도 읽기 너무 어려움....
     - if/else 조건 삼항 표현식 사용해보자 !
+
 
 ```python
 red = my_values.get('red', [''])
@@ -73,6 +76,7 @@ red = int(red[0]) if red[0] else 0
 
     - 훨씬 낫지만 if/else 삼항 표현식 자체가 어렵다....
     - 여러 줄 if/else 문으로 표현한다면?
+
 ```python
 green = my_values.get('green', [''])
   if green[0]:

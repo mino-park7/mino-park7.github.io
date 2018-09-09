@@ -27,6 +27,7 @@ print(evens)
 
 - 문제는 stride문법이 종종 예상치 못한 동작을 해서 버그를 만들어내기도 하는 것
   - ex: 파이썬에서 바이트 문자열을 역순으로 만드는 일반적인 방법은 스트라이드 -1로 문자열을 슬라이스하는 것
+
 ```python
 x = b'mongoose'
 y = x[::-1]
@@ -58,6 +59,7 @@ position 0: invalid start byte
 - `stride`를 사용해야 한다면 양수 값을 사용하고, start와 end 인덱스는 생략하자
 - `stride`를 꼭 start나 end 인덱스와 함께 사용해야 한다면
   - `stride`를 적용한 결과를 변수에 할당하고, 이 변수를 슬라이스한 결과를 다른 변수에 할당해서 사용
+
 ```python
 b = a[::2]
 c = b[1:-1]

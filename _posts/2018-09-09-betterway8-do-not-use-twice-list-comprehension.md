@@ -12,6 +12,7 @@ tag: [python, effective,]
 
 - 리스트 컴프리헨션은 기본 사용법뿐만 아니라 다중 루프로 지원함
   - ex: 행렬을 모든 셀이 포함된 평평한 리스트 하나로 간략화, for를 두개 사용한 리스트 컴프리헨션 (왼쪽 > 오른쪽 순서)
+
 ```python
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flat = [x for row in matrix for x in row]
@@ -22,6 +23,7 @@ print(flat)
 ```
 
   - 입력 리스트의 레이아웃을 두 레벨로 중복해서 구성(매트릭스 제곱 구하기)
+
 ```python
 squared = [[x**2 for x in row] for row in matrix]
 print(squared)
@@ -30,6 +32,7 @@ print(squared)
 [[1, 4, 9], [16, 25, 36], [49, 64, 81]]
 ```
   - 위 표현식을 다른 루프에 넣는다면, 리스트 컴프리헨션이 여러 줄로 구분해야 할 정도로 길어진다.
+
 ```python
 my_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flat = [x for sublist1 in my_list
@@ -48,6 +51,7 @@ for sublist1 in my_lists:
 - 리스트 컴프리헨션도 다중 if 조건을 지원한다.
   - 같은 루프 레벨에 **여러조건이 있으면 암시적인 `and` 표현식**이 된다
   - ex: 숫자로 구성된 리스트에서 4보다 큰 짝수 값만 가지고 오는 것
+
 ```python
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 b = [x for x in a if x > 4 if x % 2 == 0]
@@ -56,6 +60,7 @@ c = [x for x in a if x > 4 and x % 2 == 0]
 
 - 조건은 루프의 각 레벨에서 for 표현식 뒤에 설정 가능
   - ex: 행렬에서 row의 합이 10 이상이고 3으로 나누어 떨어지는 셀을 구하자
+
 ```python
 matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 filtered = [[x for x in raw if x % 3 ==0]
