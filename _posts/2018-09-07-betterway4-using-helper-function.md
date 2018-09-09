@@ -15,7 +15,7 @@ from urllib.parse import parse_qs
 my_values = parse_qs('red=5&blue=0&green=', keep_blank_values=True)
 print(repr(my_values))
 
->>>
+$$$
 {'red': ['5'], 'green': [''], 'blue': ['0']}
 ```
 
@@ -28,7 +28,7 @@ print('Green:     ', my_values.get('green'))
 print('Opacity:   ', my_values.get('opacity'))
 
 
->>>
+$$$
 Red:      ['5']
 Green:    ['']
 Opacity:  None
@@ -46,7 +46,7 @@ print('Green:     %r' % green)
 print('Opacitry:  %r' % opacity)
 
 
->>>
+$$$
 Red:    '5'
 Green:   0
 Opacity: 0

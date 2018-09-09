@@ -18,7 +18,7 @@ matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 flat = [x for row in matrix for x in row]
 print(flat)
 
->>>
+$$$
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
@@ -28,7 +28,7 @@ print(flat)
 squared = [[x**2 for x in row] for row in matrix]
 print(squared)
 
->>>
+$$$
 [[1, 4, 9], [16, 25, 36], [49, 64, 81]]
 ```
   - 위 표현식을 다른 루프에 넣는다면, 리스트 컴프리헨션이 여러 줄로 구분해야 할 정도로 길어진다.
@@ -67,7 +67,7 @@ filtered = [[x for x in raw if x % 3 ==0]
             for raw in matrix if sum(row) >= 10]
 print(filtered)
 
->>>
+$$$
 [[6], [9]]
 ```
 

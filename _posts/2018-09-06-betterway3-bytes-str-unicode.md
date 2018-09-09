@@ -115,7 +115,7 @@ with open('/tmp/random.bin', 'wb') as f:
 ## 핵심정리
 
 - 파이썬 3에서 `bytes` : raw 8bit, `str` : unicode
-  - > or + 같은 연산자에 `bytes`와 `str` 인스턴스를 함께 사용할 수 없다.
+  - `>`` or + 같은 연산자에 `bytes`와 `str` 인스턴스를 함께 사용할 수 없다.
 - 파이썬 2에서 `str` : raw 8 bit, `unicode` : unicode
   - 만약 7 bit ascii 사용시 연산자에 `str`과 `unicode` 인스턴스 동시 사용 가능
 - 헬퍼 함수를 사용해서 처리할 입력값 원하는 문자 시퀀스 타입 (8 bit, utf-8 encoding, unicode)으로 되어있게 한다.

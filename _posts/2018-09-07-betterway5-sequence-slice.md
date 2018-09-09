@@ -20,7 +20,7 @@ print('First four:', a[:4])
 print('Last four: ', a[4:])
 print('Middle two:', a[3:-3])
 
->>>
+$$$
 Fisrt four: ['a', 'b', 'c', 'd']
 Last four : ['e', 'f', 'g', 'h']
 Middle two: ['d', 'e']
@@ -48,7 +48,7 @@ b[1] = 99
 print('After:     ', b)
 print('No Change: ', a)
 
->>>
+$$$
 Before:   ['e', 'f', 'g', 'h']
 After:    ['e', 99, 'g', 'h']
 No Change:['a', 'b,' 'c,' 'd', 'e', 'f', 'g', 'h']
@@ -64,7 +64,7 @@ print('Before ', a)
 a[2:7] = [99, 22, 14]
 print('After  ', a)
 
->>>
+$$$
 Before ['a', 'b,' 'c,' 'd', 'e', 'f', 'g', 'h']
 After  ['a', 'b', 99, 22, 14, 'h']
 ```
@@ -84,7 +84,7 @@ a[:] = [101, 102, 103]
 assert a is b # 여전히 같은 리스트 객체임
 print('After', a) # 이제 다른 내용을 담음
 
->>>
+$$$
 Before ['a', 'b', 99, 22, 14, 'h']
 After [101, 102, 103]
 ```

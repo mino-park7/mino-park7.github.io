@@ -22,7 +22,7 @@ a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 squares = [x**2 for x in a]
 print(squares)
 
->>>
+$$$
 [1, 4, 9. 16, ...]
 ```
     - 두번째, map 사용 (lambda 사용해야 해서 깔끔해 보이지 않음)
@@ -41,12 +41,12 @@ squares = map(lambda x: x ** 2, a)
 even_squares = [x**2 for x in a if x % 2==0]
 print(even_squares)
 
->>>
+$$$
 [4, 16, 36,...]
 ```
 
 - 두번째, filter와 map 사용 (훨씬 읽기 어려움)
-  
+
 ```python
 alt = map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, a))
 assert even_squares == list(alt)
@@ -64,7 +64,7 @@ chile_len_set = {len(name) for name in rank_dict.values()}
 print(rank_dict)
 print(chile_len_set)
 
->>>
+$$$
 {1: 'ghost', 2: 'habanero', 3: 'cayenne'}
 {8, 5, 7} # 알파벳 역순인가...? 아님 그냥 python set 자체가 unordered collection 임....
 ```
