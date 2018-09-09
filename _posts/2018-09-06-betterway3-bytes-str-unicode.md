@@ -46,6 +46,7 @@ def to_str(bytes_or_str):
         value = bytes_or_str
     return value # str 인스턴스
 ```
+
     - `str` or `bytes` 를 받아 `bytes` 반환하는 메서드 필요
 
 ```python
@@ -68,6 +69,7 @@ def to_unicode(unicode_or_str):
         value = unicode_or_str
     return value # unicode 인스턴스
 ```
+
     - `str` or `unicode`를 입력으로 받아 `unicode`를 반환하는 메서드 필요
 
 ```python
@@ -96,9 +98,10 @@ def to_str(unicode_or_str):
 with open('/tmp/random.bin', 'w') as f:
     f.write(os.urandom(10))
 
->>>
+$$$
 TypeError: must be str, not bytes
 ```
+
     - 문제가 일어난 이유는 파이썬3의 `open`에 `encoding` 인수가 추가되었고 기본값은 `utf-8`
     - 따라서 파일 핸들을 사용하는 `read`나 `write` 연산은 바이너리 데이터를 담은 `bytes` 인스턴스가 아니라, 유니코드 문자를 담은 `str` 인스턴스를 기대
     - 해결법
