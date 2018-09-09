@@ -68,7 +68,7 @@ $$$
 {1: 'ghost', 2: 'habanero', 3: 'cayenne'}
 {8, 5, 7} # 알파벳 역순인가...? 아님 그냥 python set 자체가 unordered collection 임....
 ```
-
+  
 ---
 
 ## 핵심정리
