@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "이펙티브 파이썬 - 6. map과 filter 대신 리스트 컴프리헨션을 사용하자"
+title: "이펙티브 파이썬 - 7. map과 filter 대신 리스트 컴프리헨션을 사용하자"
 date: "2018-09-09 18:39"
 category: effective python Study
 tag: [python, effective,]
