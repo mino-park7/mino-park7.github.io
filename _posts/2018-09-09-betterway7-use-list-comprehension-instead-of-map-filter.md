@@ -15,6 +15,8 @@ tag: [python, effective,]
 - 이 문법을 사용한 표션식을 리스트 컴프리헨션(list comprehension) 이라고 함
   - ex: 리스트에 있는 각 숫자의 제곱을 계산 한다고 하자 몇가지 방법이 존재함
     - 첫번째, 리스트 컴프리헨션 사용
+
+
 ```python
 a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 squares = [x**2 for x in a]
@@ -24,6 +26,8 @@ print(squares)
 [1, 4, 9. 16, ...]
 ```
     - 두번째, map 사용 (lambda 사용해야 해서 깔끔해 보이지 않음)
+
+
 ```python
 squares = map(lambda x: x ** 2, a)
 ```
@@ -31,6 +35,8 @@ squares = map(lambda x: x ** 2, a)
 - map과 달리 리스트 컴프리헨션을 사용하면 입력 리스트에 있는 아이템을 간편하게 걸러내서 그에 대응하는 출력을 결과에서 삭제할 수 있음
   - ex: 2로 나누어 떨어지는 숫자의 제곱만 계산
     - 첫번쨰, 리스트 컴프리헨션 사용
+
+
 ```python
 even_squares = [x**2 for x in a if x % 2==0]
 print(even_squares)
