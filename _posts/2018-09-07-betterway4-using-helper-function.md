@@ -99,7 +99,7 @@ def get_first_int(values, ket, default=0):
 
 green = get_first_int(my_values, 'green')
 ```
-
+  
 - 표현식이 복잡해지기 시작하면
   - 최대한 빨리 해당 표현식을 작은 조각으로 분할
   - 로직을 헬퍼 함수로 옮기는 방안 고려
