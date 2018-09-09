@@ -44,7 +44,9 @@ print(even_squares)
 >>>
 [4, 16, 36,...]
 ```
+
 - 두번째, filter와 map 사용 (훨씬 읽기 어려움)
+  
 ```python
 alt = map(lambda x: x ** 2, filter(lambda x: x % 2 == 0, a))
 assert even_squares == list(alt)
