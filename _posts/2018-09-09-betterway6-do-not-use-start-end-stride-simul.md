@@ -8,7 +8,7 @@ tag: [python, effective,]
 
 
 
-# 한 슬라이스에 start, end, stried를 함께 쓰지 말자
+# 6. 한 슬라이스에 start, end, stried를 함께 쓰지 말자
 
 - `somelist[start:end:stride]` 처럼 슬라이스의 스트라이드(간격)를 설정하는 문법이 있다.
   - 시퀀스를 슬라이스 할 때, 매 n번째 아이템을 가져올 수 있음

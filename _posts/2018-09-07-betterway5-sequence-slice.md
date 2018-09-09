@@ -6,7 +6,7 @@ category: effective python Study
 tag: [python, effective,]
 ---
 
-# 시퀀스를 슬라이스하는 방법을 알자
+# 5. 시퀀스를 슬라이스하는 방법을 알자
 
 - 파이썬은 시퀀스를 슬라이스해서 조각으로 만드는 문법을 제공
   - 슬라이싱 대상 : list, str, bytes ...
