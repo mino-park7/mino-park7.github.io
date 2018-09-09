@@ -110,9 +110,9 @@ TypeError: must be str, not bytes
 with open('/tmp/random.bin', 'wb') as f:
     f.write(os.urandom(10))
 ```
-
-    - 파일 오픈 시 `rb` 를 사용하여 바이너리 모드임을 알리면 된다.
   
+    - 파일 오픈 시 `rb` 를 사용하여 바이너리 모드임을 알리면 된다.
+
 ---
 
 ## 핵심정리
