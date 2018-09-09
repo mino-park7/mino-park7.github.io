@@ -40,52 +40,52 @@ Middle two: ['d', 'e']
 - 슬라이싱의 결과는 완전히 새로운 리스트
   - 원본 리스트에 들어 있는 객체에 대한 참조는 유지
   - 하지만 슬라이스한 결과를 수정해도 원본 리스트에 아무런 영향을 미치지 않음
-  ```python
-  b = a[4:]
-  print('Before:    ', b)
-  b[1] = 99
-  print('After:     ', b)
-  print('No Change: ', a)
+```python
+b = a[4:]
+print('Before:    ', b)
+b[1] = 99
+print('After:     ', b)
+print('No Change: ', a)
 
-  >>>
-  Before:   ['e', 'f', 'g', 'h']
-  After:    ['e', 99, 'g', 'h']
-  No Change:['a', 'b,' 'c,' 'd', 'e', 'f', 'g', 'h']
-  ```
+>>>
+Before:   ['e', 'f', 'g', 'h']
+After:    ['e', 99, 'g', 'h']
+No Change:['a', 'b,' 'c,' 'd', 'e', 'f', 'g', 'h']
+```
 
 - 할당에 사용하면 슬라이스는 원본 리스트에서 지정한 범위를 대체
   - `a, b = c[:2]`같은 튜플 할당과 달리 슬라이스 할다으이 길이는 달라도 된다.
   - 할당 받은 슬라이스의 앞뒤 값은 유지
   - 리스트는 새로 들어온 값에 맞춰 늘어나거나 줄어듦
-  ```python
-  print('Before ', a)
-  a[2:7] = [99, 22, 14]
-  print('After  ', a)
+```python
+print('Before ', a)
+a[2:7] = [99, 22, 14]
+print('After  ', a)
 
-  >>>
-  Before ['a', 'b,' 'c,' 'd', 'e', 'f', 'g', 'h']
-  After  ['a', 'b', 99, 22, 14, 'h']
-  ```
+>>>
+Before ['a', 'b,' 'c,' 'd', 'e', 'f', 'g', 'h']
+After  ['a', 'b', 99, 22, 14, 'h']
+```
 
 - 시작과 끝 인덱스를 모두 생략하고 슬라이스 하면 원본 리스트의 **복사본**을 얻는다
 
-  ```python
-  b = a[:]
-  assert b == a and b is not a
+```python
+b = a[:]
+assert b == a and b is not a
   ```
 
 - 새 리스트를 할당하지 않고 슬라이스 시작과 끝 인덱스를 지정하지 않고 할당하면 슬라이스의 전체 내용을 참조 대상의 복사본으로 대체
-  ```python
-  b = a
-  print('Before', a)
-  a[:] = [101, 102, 103]
-  assert a is b # 여전히 같은 리스트 객체임
-  print('After', a) # 이제 다른 내용을 담음
+```python
+b = a
+print('Before', a)
+a[:] = [101, 102, 103]
+assert a is b # 여전히 같은 리스트 객체임
+print('After', a) # 이제 다른 내용을 담음
 
-  >>>
-  Before ['a', 'b', 99, 22, 14, 'h']
-  After [101, 102, 103]
-  ```
+>>>
+Before ['a', 'b', 99, 22, 14, 'h']
+After [101, 102, 103]
+```
 
 ---
 

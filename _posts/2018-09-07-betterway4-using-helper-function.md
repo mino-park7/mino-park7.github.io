@@ -59,27 +59,27 @@ Opacity: 0
 - 하지만 이 표현식의 문제점은
   - 읽기 어렵다
   - 필요한 작업을 다 수행하지도 않음 : 모든 파라미터 값이 정수가 되도록 해야함, `int` 사용 필요
-    ```python
-    red = int(my_values.get('red', [''])[0] or 0)
-    ```
+```python
+red = int(my_values.get('red', [''])[0] or 0)
+```
 
     - 이것도 읽기 너무 어려움....
     - if/else 조건 삼항 표현식 사용해보자 !
 
-    ```python
-    red = my_values.get('red', [''])
-    red = int(red[0]) if red[0] else 0
-    ```
+```python
+red = my_values.get('red', [''])
+red = int(red[0]) if red[0] else 0
+```
 
     - 훨씬 낫지만 if/else 삼항 표현식 자체가 어렵다....
     - 여러 줄 if/else 문으로 표현한다면?
-    ```python
-    green = my_values.get('green', [''])
-      if green[0]:
-          green = int(green[0])
-      else:
-          green = 0
-    ```
+```python
+green = my_values.get('green', [''])
+  if green[0]:
+      green = int(green[0])
+  else:
+      green = 0
+```
 ## 헬퍼함수를 사용할 때!
 
 - 위와 같은 로직을 반복해서 써야한다면 **헬퍼 함수를 만들자!**

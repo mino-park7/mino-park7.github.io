@@ -37,43 +37,43 @@ tag: [python, effective,]
 - 이 두경우 사이에서 변환하고 코드에서 원하는 타입과 입력값의 타입이 정확히 일치하게 하려면 헬퍼 함수 두 개가 필요
   - 파이썬 3
     - 먼저 `str`이나 `bytes`를 입력으로 받고 `str`을 반환하는 메서드 필요
-    ```python
-    def to_str(bytes_or_str):
-        if isinstance(bytes_or_str, bytes):
-            value = bytes_or_str.decode('utf-8')
-        else:
-            value = bytes_or_str
-        return value # str 인스턴스
-    ```
+```python
+def to_str(bytes_or_str):
+    if isinstance(bytes_or_str, bytes):
+        value = bytes_or_str.decode('utf-8')
+    else:
+        value = bytes_or_str
+    return value # str 인스턴스
+```
     - `str` or `bytes` 를 받아 `bytes` 반환하는 메서드 필요
-    ```python
-    def to_bytes(bytes_or_str):
-        if isinstance(bytes_or_str, str):
-            value = bytes_or_str.encode('utf-8')
-        else:
-            value = bytes_or_str
-        return value # bytes 인스턴스
-    ```
+```python
+def to_bytes(bytes_or_str):
+    if isinstance(bytes_or_str, str):
+        value = bytes_or_str.encode('utf-8')
+    else:
+        value = bytes_or_str
+    return value # bytes 인스턴스
+```
 
   - 파이썬 2
     - 먼저 `str`이나 `unicode`를 입력으로 받고 `unicode`를 반환하는 메서드가 필요
-    ```python
-    def to_unicode(unicode_or_str):
-        if isinstance(unicode_or_str, str):
-            value = unicode_or_str.decode('utf-8')
-        else:
-            value = unicode_or_str
-        return value # unicode 인스턴스
-    ```
+```python
+def to_unicode(unicode_or_str):
+    if isinstance(unicode_or_str, str):
+        value = unicode_or_str.decode('utf-8')
+    else:
+        value = unicode_or_str
+    return value # unicode 인스턴스
+```
     - `str` or `unicode`를 입력으로 받아 `unicode`를 반환하는 메서드 필요
-    ```python
-    def to_str(unicode_or_str):
-        if isinstance(unicode_or_str, unicode):
-            value = unicode_or_str.encode('utf-8')
-        else:
-            value = unicode_or_str
-        return value # str 인스턴스
-    ```
+```python
+def to_str(unicode_or_str):
+    if isinstance(unicode_or_str, unicode):
+        value = unicode_or_str.encode('utf-8')
+    else:
+        value = unicode_or_str
+    return value # str 인스턴스
+```
 
 ---
 
@@ -87,20 +87,20 @@ tag: [python, effective,]
   2. 파이썬 3에서 내장 함수 `open()`이 반환하는 파일 핸들을 사용하는 연산 : `utf-8`
     - 파이썬 2에서는 기본으로 바이너리 인코딩 사용
     - 아래 코드는 python 2에서는 작동하지만, python 3에서는 작동하지 않는다
-    ```python
-    with open('/tmp/random.bin', 'w') as f:
-        f.write(os.urandom(10))
+```python
+with open('/tmp/random.bin', 'w') as f:
+    f.write(os.urandom(10))
 
-    >>>
-    TypeError: must be str, not bytes
-    ```
+>>>
+TypeError: must be str, not bytes
+```
     - 문제가 일어난 이유는 파이썬3의 `open`에 `encoding` 인수가 추가되었고 기본값은 `utf-8`
     - 따라서 파일 핸들을 사용하는 `read`나 `write` 연산은 바이너리 데이터를 담은 `bytes` 인스턴스가 아니라, 유니코드 문자를 담은 `str` 인스턴스를 기대
     - 해결법
-    ```python
-    with open('/tmp/random.bin', 'wb') as f:
-        f.write(os.urandom(10))
-    ```
+```python
+with open('/tmp/random.bin', 'wb') as f:
+    f.write(os.urandom(10))
+```
 
     - 파일 오픈 시 `rb` 를 사용하여 바이너리 모드임을 알리면 된다.
 
