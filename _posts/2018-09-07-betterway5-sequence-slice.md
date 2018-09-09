@@ -77,6 +77,7 @@ assert b == a and b is not a
   ```
 
 - 새 리스트를 할당하지 않고 슬라이스 시작과 끝 인덱스를 지정하지 않고 할당하면 슬라이스의 전체 내용을 참조 대상의 복사본으로 대체
+  
 ```python
 b = a
 print('Before', a)
