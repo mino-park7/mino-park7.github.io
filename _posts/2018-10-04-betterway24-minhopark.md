@@ -1,3 +1,10 @@
+---
+layout: "post"
+title: "이펙티브 파이썬 - 24. 객체를 범용으로 생성하려면 @classmethod 다형성을 이용하자"
+date: "2018-10-04 01:30"
+category: effective python Study
+tag: [python, effective,]
+---
 
 # BetterWay24. 객체를 범용으로 생성하려면 @classmethod 다형성을 이용하자
 
@@ -7,14 +14,14 @@
 
 - 다형성은 계층 구조에 속한 여러 클래스가 자체의 메서드를 독립적인 버전으로 구현하는 방식
 - 다형성을 이용하면 여러 클래스가 같은 인터페이스나 추상 기반 클래스를 충족하면서도 다른 기능을 제공할 수 있다.
-  
+
 - ex) 맵리듀스 구현을 작정할 때 입력 데이터를 표현할 공통 클래스가 필요하다고 하자.
    - 다음은 서브클래스에서 정의해야하는 `read`메서드가 있는 입력 데이터 클래스다.
 
 
 ```python
 class InputData(object):
-    
+
     def read(self):
         raise NotImplementedError
 ```
@@ -23,11 +30,11 @@ class InputData(object):
 ```python
 # 디스크에 있는 파일에서 데이터를 읽어오도록 구현한 InputData의 서브클래스
 class PathInputData(InputData):
-    
+
     def __init__(self, path):
         #super.__init__()
         self.path = path
-        
+
     def read(self):
         return open(self.path).read()
 ```
@@ -42,10 +49,10 @@ class Worker(object):
     def __init__(self, input_data):
         self.input_data = input_data
         self.result = None
-        
+
     def map(self):
         raise NotImplementedError
-        
+
     def reduce(self, other):
         raise NotImplementedError
 ```
@@ -57,7 +64,7 @@ class LineCountWorker(Worker):
     def map(self):
         data = self.input_data.read()
         self.result = data.count('\n')
-        
+
     def reduce(self, other):
         self.result += other.result
 ```
@@ -95,12 +102,12 @@ def excute(workers):
     threads = [Thread(target=w.map) for w in workers]
     for thread in threads: thread.start()
     for thread in threads: thread.join()
-    
+
     first, rest = workers[0], workers[1:]
     for worker in rest:
         first.reduce(worker)
     return first.result
-    
+
 ```
 
 
@@ -118,7 +125,7 @@ def mapreduce(data_dir):
 from tempfile import TemporaryDirectory
 
 def write_test_files(tmpdir):
-    
+
     for i in range(1000):
         with open(os.path.join(tmpdir, str(i) + '.txt'), 'w') as f:
             f.write('*\n' * i)
@@ -126,9 +133,9 @@ def write_test_files(tmpdir):
 with TemporaryDirectory() as tmpdir:
     write_test_files(tmpdir)
     result = mapreduce(tmpdir)
-    
+
 print('There are', result, 'lines')
-        
+
 ```
 
     There are 499500 lines
@@ -144,10 +151,10 @@ print('There are', result, 'lines')
    - 이 방식을 따르려면 각 `InputData` 서브클래스에서 맵리듀스를 조율하는 헬퍼 메서드가 범용적으로 사용할 수 있는 특별한 생성자를 제공해야함
    - 문제는 파이썬이 단일 생성자 메서드 `__init__` 만을 허용한다는 점
    - 격국 모든 `InputData` 서브클래스가 호환되는 생성자를 갖춰야 한다는 터무니 없는 요구사항 임
-   
+
 - 이 문제를 해결하는 가장 좋은 방법은 `@classmethod` 다형성을 이용하는 것
     - `@classmethod` 다형성은 생성된 객체가 아니라 전체 클래스에 적용된다는 점만 빼면 `InputData.read`에 사용한 인스턴스 메서드의 다형성과 똑같다
-    
+
 - 이 발상을 맵리듀스 관련 클래스에 적용해보자. 여기서는 공통 인터페이스를 사용해 새 `InputData` 인스턴스를 생성하는 범용 클래스 메서드로 `InputData` 클래스를 확장한다
 
 
@@ -155,7 +162,7 @@ print('There are', result, 'lines')
 class GenericInputData(object):
     def read(self):
         raise NotImplementedError
-        
+
     @classmethod
     def genrate_inputs(cls, config):
         raise NotImplementedError
@@ -169,16 +176,16 @@ class GenericInputData(object):
 class PathInputData(GenericInputData):
     def __init__(self, path):
         self.path = path
-        
+
     def read(self):
         return open(self.path).read()
-    
+
     @classmethod
     def generate_inputs(cls, config):
         data_dir = config['data_dir']
         for name in os.listdir(data_dir):
             yield cls(os.path.join(data_dir, name))
-        
+
 ```
 
 - 비슷하게 `GenericWorker` 클래스에 `create_workers` 헬퍼를 작성한다.
@@ -191,13 +198,13 @@ class GenericWorker(object):
     def __init__(self, input_data):
         self.input_data = input_data
         self.result = None
-        
+
     def map(self):
         raise NotImplementedError
-        
+
     def reduce(self, other):
         raise NotImplementedError
-        
+
     @classmethod
     def create_workers(cls, input_class, config):
         workers = []
@@ -219,7 +226,7 @@ class LineCountWorker(GenericWorker):
     def map(self):
         data = self.input_data.read()
         self.result = data.count('\n')
-        
+
     def reduce(self, other):
         self.result += other.result
 ```

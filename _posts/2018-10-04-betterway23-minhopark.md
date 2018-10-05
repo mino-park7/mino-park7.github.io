@@ -1,3 +1,10 @@
+---
+layout: "post"
+title: "이펙티브 파이썬 - 23. 인터페이스가 간단하면 클래스 대신 함수를 받자"
+date: "2018-10-04 01:30"
+category: effective python Study
+tag: [python, effective,]
+---
 
 # BetterWay 23. 인터페이스가 간단하면 클래스 대신 함수를 받자
 
@@ -69,16 +76,16 @@ print('After: ', dict(result))
 ```python
 def increment_with_report(current, increments):
     added_count = 0
-    
+
     def missing():
         nonlocal added_count  # 상태 보존 클로저
         added_count += 1
         return 0
-    
+
     result = defaultdict(missing, current)
     for key, amount in increments:
         result[key] += amount
-        
+
     return result, added_count
 ```
 
@@ -100,7 +107,7 @@ assert count == 2
 class CountMissing(object):
     def __init__(self):
         self.added = 0
-        
+
     def missing(self):
         self.added += 1
         return 0
@@ -134,11 +141,11 @@ assert counter.added == 2
 class BetterCountMissing(object):
     def __init__(self):
         self.added = 0
-        
+
     def __call__(self):
         self.added += 1
         return 0
-    
+
 counter = BetterCountMissing()
 counter()
 assert callable(counter)
