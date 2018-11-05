@@ -38,7 +38,7 @@ comments: true
 
 - **transpose(전치)** :
   - 원래의 행렬을 **주대각(main diagonal)** 대칭으로 반사한 것
-  - $(\mathbf{ A }^\top)_{i,j} = \mathbf{ A }_{j,i}$
+  - $(\bf{ A }^\top)_{i,j} = \bf{ A }_{j,i}$
 
 ## 2.2 행렬과 벡터의 곱셉
 - **행렬곱**
@@ -74,7 +74,7 @@ comments: true
 $$\bf{Ax} = \bf{b}$$
 $$\bf{A}^{-1}\bf{Ax} = \bf{A}^{-1}\bf{b}$$
 $$\bf{I}_n\bf{x} = \bf{A}^{-1}\bf{b}$$
-$$\bf{x} = \bf{A}^{-1}\bf{b}$$  
+$$\bf{x} = \bf{A}^{-1}\bf{b}$$
 
 - 물론 요론 계산은 $\bf{A}^{-1}$를 구할 수 있을때만 가능
 - $\bf{A}^{-1}$가 존재한다고 할 때, 그것의 닫힌 형식을 구하는 알고리즘이 여러 개 있다.
