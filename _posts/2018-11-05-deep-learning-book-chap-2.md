@@ -38,7 +38,7 @@ comments: true
 
 - **transpose(전치)** :
   - 원래의 행렬을 **주대각(main diagonal)** 대칭으로 반사한 것
-  - $(\bf{ A }^\top)_{i,j} $ $= \bf{ A }_{j,i}$
+  - <div>$(\bf{ A }^\top)_{i,j} $ $= \bf{ A }_{j,i}$ </div>
 
 ## 2.2 행렬과 벡터의 곱셉
 - **행렬곱**
