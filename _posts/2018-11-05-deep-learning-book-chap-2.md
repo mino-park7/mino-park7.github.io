@@ -4,6 +4,7 @@ title: "Deep Learning Book - chap 2. Linear Algebra"
 date: "2018-11-05 20:08"
 category: Deep Learning Book
 tag: [deep learning, study]
+comments: true
 ---
 
 # chapter 2. 선형 대수
