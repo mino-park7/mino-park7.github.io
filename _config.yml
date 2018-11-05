@@ -50,14 +50,14 @@ tag_page: '/blog/tags/'
 category_page: '/blog/categories/'
 keep_files: [assets]
 
-disqus_url: https://mino-park7.disqus.com
-disqus_id: mino-park7
+disqus_url: 'https://mino-park7.disqus.com'
+disqus_id: 'mino-park7'
 
 # hero:
 #  image: https://ratsgo.github.io/public/img/picture.JPG
 #  caption: Original Artwork &copy; Pablo Picasso. Girl before a Mirror. Boisgeloup, March 1932. Oil on canvas
 
 # Puglins
-# mathjax: true # whether support mathjax
+mathjax: true # whether support mathjax
 # google_analytics_token: 'UA-93172815-1' # leave blank if you don't want google analytics
-# disqus_short_name: 'ratsgo-github-io' # leave blank if you don't want disqus
+disqus_short_name: 'mino-park7' # leave blank if you don't want disqus
