@@ -1,0 +1,49 @@
+---
+layout: "post"
+title: "docker 기본개념 정리"
+date: "2018-12-07 15:18"
+category: docker
+tag: [study, docker]
+---
+
+# 1. 가상 머신(VM)과 도커(docker)
+
+## 1-1. 먼저, 가상머신이란 무엇인가?
+
+
+![VM](https://mino-park7.github.io/images/2018/12/vm.png)
+
+- 가상 머신은 host OS 위에 Guest OS + Bins/Libs + App 들로 이루어진 매우 크고 아름답고 느린... 그런 것이다
+- 위 그림의 VM 영역을 이미지로 뜨면, 서버를 편하게 계속 만들어 낼 수 있음
+- But, 리얼 머신에 비해 너무 느림...
+  - 일단 VM 이미지 내에 Guest 이미지가 포함되어 있어 이미지의 용량이 굉장히 큼
+  - 또한 host의 리소스를 hypervisor라는 것을 통해 접근하기 때문에 비효율적임
+
+## 1-2. docker는?
+
+![docker-container](https://mino-park7.github.io/images/2018/12/docker-container.png)
+
+- 도커(docker)란?
+  - 도커는 개발자와 시스템관리자가 app을 **develop, deploy, and run**을 container를 통해 할 수 있는 platform임
+  - 여기서 컨테이너라는 개념은 리눅스에 존재하던 그것! 도커에서는 컨테이너를 쉽게 deploy할 수 있는데, 이를 containerization이라고 한다.
+  - containerization은 급속도로 촉망받고 있는데, 이는 다음과 같은 컨테이너의 특성 덕분이다
+    - Flexible: Even the most complex applications can be containerized.
+    - Lightweight: Containers leverage and share the host kernel.
+      - 이는 VM과 크게 다른 점, guest OS로 커널을 새로 만들어 쓰지 않고, 호스트 커널을 공유한다.
+    - Interchangeable: You can depoly updates and upgrades on-the-fly.
+    - Portable: You can build locally, deploy to the cloud, and run anywhere.
+    - Scalable: You can increase and automatically distribute container replicas.
+    - Stackable: You can stack services vertically and on-the-fly
+
+
+## 1-3. 이미지(Images)와 컨테이너(Containers)
+  - **컨테이너**는 **이미지**를 run함으로써 launch된다
+  - 여기서 **Image**란
+    - app을 실행하기 위해 필요한 것 모두가 포함되어 있는 executable package
+      - the code, a runtime, libraries, environment variables, and configuration files
+  - **컨테이너** 란?
+    - 이미지의 runtime instance
+    - 이미지가 executed되어 메모리에 올라간 상황
+    - `docker ps` 명령어로 확인 가능
+    - 컨테이너는 리눅스에서 돌아가며, 호스트 머신의 커널을 공유한다.
+    - 이는 discrete process로 실행되어, executable한 메모리 양보다 더 많이 사용하지 않음(경량화)
