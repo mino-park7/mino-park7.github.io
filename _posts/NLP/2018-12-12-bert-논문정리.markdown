@@ -34,7 +34,7 @@ tag: [NLP, 논문정, bert, transformer]
 - 앞에 소개한 ELMo, OpenAI GPT는 pre-training시에 동일한 **objective funtion**으로 학습을 수행함, 하지만 **BERT**는 새로운 방식으로 **pre-trained Language Representation**을 학습했고 이것은 매우 효과적이었다.
 
 ### BERT의 pre-training 방법론
-![그림1. BERT, GPT, ELMo (출처 : BERT 논문)](/images/2018/12/그림1-bert-openai-gpt-elmo-출처-bert논문.png)
+![그림1. BERT, GPT, ELMo (출처 : BERT 논문)](https://mino-park7.github.io/images/2018/12/그림1-bert-openai-gpt-elmo-출처-bert논문.png)
 그림1. BERT, GPT, ELMo (출처 : BERT 논문)
 - **BERT** pre-training의 새로운 방법론은 크게 2가지로 나눈다. 하나는 **Masked Language Model(MLM)**, 또 다른 하나는 **next sentence prediction**이다.
   - 기존 방법론 : 앞에 소개한 ELMo, OpenAI GPT는 일반적인 language model을 사용하였다. 일반적인 language model이란, 앞의 n 개의 단어를 가지고 뒤의 단어를 예측하는 모델을 세우는 것이다(n-gram). 하지만 이는 필연적으로 **unidirectional**할 수 밖에 없고, 이러한 단점을 극복하기 위해 **ELMo**에서는 **Bi-LSTM**으로 양방향성을 가지려고 노력하지만, 굉장히 **shallow**한 양방향성 (단방향 concat 단방향)만을 가질 수 밖에 없었음(*그림1*).
@@ -48,3 +48,23 @@ tag: [NLP, 논문정, bert, transformer]
 - BERT의 아키텍처는 **Attention is all you need**에서 소개된 **Transformer**를 사용하지만, pre-training과 fine-tuning시의 아키텍처를 조금 다르게하여 **Transfer Learning**을 용이하게 만드는 것이 핵심
 
 ### 3.1 Model Architecture
+
+- **BERT**는 *transformer* 중에서도 **encoder** 부분만을 사용합니다. 이에 대한 자세한 내용은 [Vaswani et al (2017)](https://arxiv.org/abs/1706.03762) 또는 [tensor2tensor](https://github.com/tensorflow/tensor2tensor)를 참고 바랍니다.
+- **BERT**는 모델의 크기에 따라 *base* 모델과 *large* 모델을 제공합니다.
+  - **BERT_base** : L=12, H=768, A=12, Total Parameters = 110M
+  - **BERT_large** : L=24, H=1024, A=16, Total Parameters = 340M
+  - L : transformer block의 layer 수, H : hidden size, A : self-attention heads 수, feed-forward/filter size = 4H
+- 여기서 **BERT_base** 모델의 경우, **OpenAI GPT**모델과 *hyper parameter*가 **동일**합니다. 여기서 BERT의 저자가 의도한 바는, 모델의 하이퍼 파라미터가 동일하더라도, **pre-training concept**를 바꾸어 주는 것만으로 훨씬 높은 성능을 낼 수 있다는 것을 보여주고자 하는 것 같습니다.
+- **OpenAI GPT**모델의 경우 *그림1*에서 볼 수 있듯, next token 만을 맞추어내는 기본적인 *language model* 방식을 사용하였고, 그를 위해 **transformer decoder**를 사용했습니다. 하지만 **BERT**는 **MLM**과 **NSP**를 위해 **self-attention**을 수행하는 **transformer encoder**구조를 사용했음을 알 수 있습니다.
+- 실제로 대부분의 **NLP task SOTA**는 **BERT_large**모델로 이루어 냈습니다.
+
+### 3.2 Input Representation
+
+![그림2. bert input representation (출처: BERT 논문)](images/2019/02/bert-input-representation.png)
+
+- BERT의 input은 *그림 2*와 같이 3가지 embedding 값의 합으로 이루어져 있습니다.
+- **WordPiece embedding**을 사용합니다. [WordPiece(Wu et al., 2016)](https://arxiv.org/abs/1609.08144)에 대한 자세한 내용은 논문 링크를 참고 하시거나, [lovit님의 블로그글](https://lovit.github.io/nlp/2018/04/02/wpm/)을 참고 바랍니다. BERT english의 경우 30000개의 token을 사용하였습니다.
+- *그림 2*에서 볼 수 있듯이, *Position embedding*을 사용합니다. 이는 **Transformer**에서 사용한 방식과 같으며, [jalammer의 블로그 글](http://jalammar.github.io/illustrated-transformer/)을 참고하시면 position embedding 뿐만 아니라 transformer의 전체적인 구조를 이해 하실 수 있습니다.
+- 모든 sentence의 첫번째 token은 언제나 `[CLS]`(special classification token) 입니다. 이 `[CLS]` token은 transformer 전체층을 다 거치고 나면 token sequence의 결합된 의미를 가지게 되는데, 여기에 **간단한 classifier를 붙이면 단일 문장, 또는 연속된 문장의 classification을 쉽게 할 수 있게 됩니다**. 만약 classification task가 아니라면 이 token은 무시하면 됩니다.
+- **Sentence pair는 합쳐져서 single sequence**로 입력되게 됩니다. 각각의 Sentence는 실제로는 수 개의 sentence로 이루어져 있을 수 있습니다(eg. QA task의 경우 `[Question, Paragraph]`에서 Paragraph가 여러개의 문장). 그래서 두 개의 문장을 구분하기 위해, 첫째로는 **`[SEP]` token 사용**, 둘째로는 **Segment embedding**을 사용하여 앞의 문장에는 `sentence A embedding`, 뒤의 문장에는 `sentence B embedding`을 더해줍니다.(모두 고정된 값)
+- 만약 문장이 하나만 들어간다면 `sentence A embedding`만을 사용합니다.
