@@ -60,7 +60,7 @@ tag: [NLP, 논문정, bert, transformer]
 
 ### 3.2 Input Representation
 
-![그림2. bert input representation (출처: BERT 논문)](images/2019/02/bert-input-representation.png)
+![그림2. bert input representation (출처: BERT 논문)](https://mino-park7.github.io/images/2019/02/bert-input-representation.png)
 
 - BERT의 input은 *그림 2*와 같이 3가지 embedding 값의 합으로 이루어져 있습니다.
 - **WordPiece embedding**을 사용합니다. [WordPiece(Wu et al., 2016)](https://arxiv.org/abs/1609.08144)에 대한 자세한 내용은 논문 링크를 참고 하시거나, [lovit님의 블로그글](https://lovit.github.io/nlp/2018/04/02/wpm/)을 참고 바랍니다. BERT english의 경우 30000개의 token을 사용하였습니다.
