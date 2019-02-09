@@ -171,7 +171,7 @@ tag: [NLP, 논문정, bert, transformer]
 
 - 이번 섹션에서는, **11개의 NLP tasks**에 대한 **BERT fine-tuning**에 대해서 설명하겠습니다.
 
-![그림4. BERT experiment result]https://mino-park7.github.io/images/2019/02/그림4-bert-experiment-result.png)
+![그림4. BERT experiment result](https://mino-park7.github.io/images/2019/02/그림4-bert-experiment-result.png)
 
 그림 4. BERT experiments result (출처: [BERT 논문](https://arxiv.org/abs/1810.04805))
 
@@ -187,7 +187,7 @@ tag: [NLP, 논문정, bert, transformer]
 
 #### 4.1.1 GLUE Results
 
-![그림5. GLUE results]https://mino-park7.github.io/images/2019/02/그림5-glue-results.png)
+![그림5. GLUE results](https://mino-park7.github.io/images/2019/02/그림5-glue-results.png)
 
 그림5. GLUE results (출처: [BERT 논문](https://arxiv.org/abs/1810.04805))
 
@@ -197,3 +197,4 @@ tag: [NLP, 논문정, bert, transformer]
 
 ### 4.2 SQuAD v1.1
 - 작성 중...
+-
