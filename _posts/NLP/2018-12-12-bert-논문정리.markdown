@@ -196,5 +196,33 @@ tag: [NLP, 논문정, bert, transformer]
 - 그리고 **BERT_large**가 **BERT_base**에 비해 훨씬 좋은 성능을 냅니다.(dataset이 작은 task의 경우에도!) **BERT**의 모델 크기에 따른 성능은 [Section 5.2](#52-effect-of-model-size)에서 살펴보겠습니다.
 
 ### 4.2 SQuAD v1.1
-- 작성 중...
--
+- 기존 **SQuAD** dataset의 경우에는 **GLUE** dataset을 **BERT**에 **fine-tuning**할 때와 방식이 좀 다릅니다. GLUE dataset의 경우에는 task가 **sequence classification**이지만, SQuAD는 **질문**과 **지문**이 주어지고, 그 중 **substring인 정답**을 맞추는 task입니다.
+- 이러한 차이를 **BERT**는 아주 간단한 방법론으로 극복합니다.
+  - 일단 **질문을 `A embedding`, 지문을 `B embedding`** 으로 처리하고, **지문에서 정답이 되는 substring의 처음과 끝을 찾는 task**로 문제를 치환 합니다.
+  - `start vector` $S \in \mathbb{ R }^H$ 와 `end vector` $E \in \mathbb{ R }^H$를 **fine-tuning**중에 학습히여, **지문의 각 token**들과 **dot product**하여 **substring**을 찾아냅니다. ([그림 4 (c) 참조](#4-experiments))
+- 이런 접근법으로 **BERT_large**의 경우 기존의 모든 시스템을 **wide margin**을 두고 최고성능을 달성 합니다.
+
+### 4.3 Named Entity Recognition
+
+- **token tagging task**를 평가해보기 위해서 **CoNLL 2003 Named Entity Task**를 fine-tuning 해보았습니다.
+  - 해당 데이터셋은 200k개의 words로 이루어져 있고, 각각의 단어들은 `Person, Organization, Location, Miscellaneous, Other`로 태깅되어 있습니다.
+- 각 토큰마다 **classifier**를 붙여서 위의 제시된 **class**에 대해 판별을 합니다.
+- 각각의 **prediction**은 주위의 **prediction**에 영향을 받지 않습니다. (CRF나 autoregressive를 사용하지 않음!)
+- 이 task또한 **SOTA**를 달성합니다.
+
+### 4.4 SWAG
+
+- The Situations With Adversarial Generations(SWAG) 데이터셋은 113k sentence-pair로 이루어져 있으며, **grounded common-sense inference**를 측정하기 위해 사용합니다.
+- 앞 문장이 주어지고, 보기로 주어지는 4 문장중에 가장 잘 이어지는 문장을 찾는 task 입니다.
+
+> A girl is going across a set of monkey bars. She
+> (i) jumps up across the monkey bars.
+> (ii) struggles onto the bars to grab her head.
+> (iii) gets to the end and stands on a wooden plank.
+> (iv) jumps up and does a back flip.
+
+- 이 데이터셋을 **BERT**에 적용하는 것은 **GLUE** dataset 적용법과 비슷합니다. 4개의 가능한 input sequences를 구성합니다. 이는 given sentence(`sentence A`)와 possible continuation(`sentence B`)을 `concat`한 것들입니다.
+- 해당 task specific한 벡터 $V \in \mathbb{ R }^H$를 학습시키고, input sequences의 값들을 합산한 $C_i \in \mathbb{ R }^H$를 **dot product**하여 softmax 합니다.
+- 이 또한 사람을 능가하는 **SOTA**를 달성합니다.
+
+## 5. Ablation Studies
