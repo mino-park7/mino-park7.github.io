@@ -10,6 +10,9 @@ tag: [NLP, 논문정리, bert, transformer]
 
 - 최근에 NLP 연구분야에서 핫한 모델인 BERT 논문을 읽고 정리하는 포스트입니다.
 - 구성은 논문을 쭉 읽어나가며 정리한 포스트기 때문에 논문과 같은 순서로 정리하였습니다.
+- Tmax Data AI 연구소에서 제가 진행한 세미나 동영상도 첨부합니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2b7_iq8rAVY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Abstract
 
