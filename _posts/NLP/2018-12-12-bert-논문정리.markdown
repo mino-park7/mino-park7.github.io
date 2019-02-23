@@ -3,7 +3,7 @@ layout: "post"
 title: "BERT 논문정리"
 date: "2018-12-12 20:14"
 category: NLP
-tag: [NLP, 논문정, bert, transformer]
+tag: [NLP, 논문정리, bert, transformer]
 ---
 
 # BERT: Pre-trainig of Deep Bidirectional Transformers for Language Understanding
@@ -226,3 +226,69 @@ tag: [NLP, 논문정, bert, transformer]
 - 이 또한 사람을 능가하는 **SOTA**를 달성합니다.
 
 ## 5. Ablation Studies
+
+- 해당 챕터에서는 이전 챕터에서 **중요한 요소**라고 설명했던 부분을을 **하나씩 제거**하며 요소들의 중요함을 파악해 보고있습니다.
+- 개인적으로 **논문에서 가장 중요한 챕터**라고 생각합니다.
+
+### 5.1 Effect of Pre-training Tasks
+
+- 5.1에서는 이전 [3.3 Pre-training Tasks](#33-pre-training-tasks)에서 소개한 2가지 task를 하나씩 제거하면서 각각의 task의 효과를 알아봅니다.
+- BERT_base와 동일한 hyperparameter로 실험을 진행하지만 **ablation**한 두가지 다른 모델로 실험을 진행합니다.
+  - 1. **No NSP**: MLM은 사용하지만, 다음 문장 예측 (**NSP**)를 없앤 모델
+  - 2. **LTR & No NSP** : **MLM** 대신 **Left-to-Right (LTR)** 을 사용하고, **NSP**도 없앤 모델, 이는 **OpenAI GPT**모델과 완전히 동일하지만, 더 많은 트레이닝 데이터를 사용하였습니다.
+
+![그림6. ablation result1](/images/2019/02/그림6-ablation-result1.png)
+그림6. pre-training task ablation result (출처: [BERT 논문](https://arxiv.org/abs/1810.04805))
+
+- 표에서 볼 수 있듯, pre-training task를 하나라도 제거하면 성능이 굉장히 떨어지는 것을 볼 수 있습니다.
+- **No NSP**의 경우에는 **NLI**계열의 task에서 **성능이 많이 하락**하게 되는데, 이는 **NSP task**가 문장간의 논리적인 구조 파악에 중요한 역할을 하고 있음을 알 수 있습니다.
+- MLM대신 LTR을 쓰게 되면 성능하락은 더욱더 심해지게 됩니다. **BiLSTM을 더 붙여도**, MLM을 쓸 때보다 성능이 하락하는 것으로 보아, **MLM task**가 더 **Deep Bidirectional**한 것임을 알 수 있습니다.
+
+
+## 5.2 Effect of Model Size
+
+- 간단하게 말해서, 측정한 데이터셋에서는 모두 **모델이 커질수록, 정확도가 상승함**을 볼 수 있습니다.
+
+![그림7. ablation result2](/images/2019/02/그림7-ablation-result2.png)
+그림7. Ablation over BERT model size (출처: [BERT 논문](https://arxiv.org/abs/1810.04805))
+
+- 수 년동안 알려져 왔듯, 번역 task나 language modeling과 같은 large-scale task는 모델 사이즈가 클 수록 성능은 계속 상승합니다.
+- 특히 BERT의 경우에는, downstream task를 수행하는 dataset의 크기가 작아도, pre-training덕분에, model의 크기가 클 수록 정확도는 상승함을 볼 수 있습니다.
+
+## 5.3 Effect of Number of Training Steps
+
+![그림8. ablation result3](/images/2019/02/그림8-ablation-result3.png)
+그림8. Ablation over number of training steps (출처: [BERT 논문](https://arxiv.org/abs/1810.04805))
+
+- 그림 8에서는 **MNLI** Dev accuracy를 pre-training step에 따라 정리하였습니다. 세부사항은 문답형식으로 진행하겠습니다.
+
+---
+
+- Question 1. fine-tuning 단계에서 높은 정확도를 얻으려면, pre-training 단계에서 많은 training step이 필요합니까?
+  - A : 그렇습니다. 0.5M step에 비해 1M step때 accuracy가 거의 1.0% 상승함을 볼 수 있습니다.
+- Question 2. [3.3.1 Task #1: Masked LM](#331-task-1-masked-lm)의 마지막 부분에서 시사한 바와 같이, **MLM**으로 학습하면 15%의 단어만 맞추는 것으로 학습을 진행하기 때문에, LTR보다 **수렴속도가 훨씬 느리지**않습니까?
+  - A : **수렴속도가 조금 느린 것은 사실**이지만, **LTR보다 훨씬 먼저 out-perform**성능이 나오게 됩니다.
+
+
+## 5.4 Feature-based Approach with BERT
+
+- 지금까지 BERT는 pre-training을 진행 한 후, downstream task를 학습 할 때, 간단한 classifier를 부착해서 모든 layer를 다시 학습시키는 fine-tuning 방법을 사용하는 것만을 설명드렷습니다.
+- 하지만 BERT를 ELMO와 같이 **feature based approach**로도 사용을 할 수 있습니다.
+- **Feature-based Approach**는 몇가지 이점이 존재합니다.
+  - 1. Transformer encoder는 모든 NLP task를 represent하지는 못하므로, 특정 NLP task를 수행할 수 있는 Network를 부착하여 쓸 수 있습니다.
+  - 2. Computational benefit을 얻을 수 있습니다.
+
+- 해당 section에서는 BERT를 ELMO와 같이 마지막 레이어에 Bi-LSTM을 부착시켜, 해당 레이어만 학습 시키는 방법론을 사용해보았습니다.
+
+![그림9. ablation result4](/images/2019/02/그림9-ablation-result4.png)
+그림9. Ablation using BERT with a feature-based approach (출처: [BERT 논문](https://arxiv.org/abs/1810.04805))
+
+- 그림 9에서 볼 수 있듯이, **Concat Last Four Hiddem**값을 사용하면, **Finetune All**과 단지 0.3 F1 score차이밖에 나지 않습니다.
+- 이를 통해, BERT는 **Feature-based Approach**에서도 효과적이라고 할 수 있겠습니다.
+
+# 6. Conclusion
+
+- 읽으면서 계속해서 느꼈지만, 굉장히 놀라운 논문이라고 생각합니다. 특히 MLM과 NSP task를 생각해 낸것이 굉장히 놀라웠습니다. 이러한 간단한 **intuition**을 가지고 NLP의 전분야를 아우르는 SOTA를 달성해 낸 것에 대해서 놀랍고, 또 부럽다는 생각을 했습니다.
+
+# 마치며...
+- 논문을 읽은 것이 10월 말 경이었던 것 같은데, 조금씩 글로 정리하다 보니 벌써 2월 말이 되었습니다. 그 사이에 BERT를 토대로 다시 SOTA를 달성한 새로운 논문([Multi-Task Deep Neural Networks for Natural Language Understanding](https://arxiv.org/pdf/1901.11504.pdf))을 MS에서 발표하였습니다. 해당 논문도 빠른 시일내에 review해 보도록 하겠습니다. 감사합니다.
