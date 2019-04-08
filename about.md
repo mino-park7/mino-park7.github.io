@@ -7,13 +7,14 @@ title: About
 * 간단프로필
 >* Tmax Data에서 Deep Learning, NLP 연구(병역특례)
 >* 한국고용정보원 빅데이터 기반 일자리 매칭 프로젝트 진행
-
+>* Tmax OS AI 비서 AI-ET 개발
 * 약력
 >* 서울대학교(SNU) 원자핵공학 전공 학사 졸 (2011.03 ~ 2015.02)
 >* 서울대학교(SNU) 핵융합 플라즈마 전공 석사 졸 (2015.03 ~ 2017.02)
 >* Tmax Cloud CRM Team Researcher (2017.02 ~ 2017.07)
 >* Tmax Data Deep Learning Team Researcher (2017.08 ~ 2018.04)
->* Tmax Data NLP Team Manager (2018.05 ~ )
+>* Tmax Data NLP Team Manager (2018.05 ~ 2019.03)
+>* Tmax Data AI Dept2. Division Manager (2019.04 ~ )
 
 * 보유기술
 >* Deep Learning
