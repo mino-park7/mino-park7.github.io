@@ -24,10 +24,14 @@
             font-family: 'Ubuntu Mono';
         }
     </style>
-    <link rel="stylesheet" href="/_includes/remark-js-style.css" />
+    <link rel="stylesheet" href="https://mino-park7.github.io/_includes/remark-js-style.css" />
 </head>
 
 <body>
+    <div id="slideshow"></div>
+    <div id="overlay"></div>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
     <textarea id="source">
 {{ content }}
     </textarea>
@@ -35,10 +39,25 @@
     </script>
     <script type="text/javascript">
         var slideshow = remark.create({
+            highlightStyle: 'github',
+            highlightLines: true,
+            // navigation options
             navigation: {
                 scroll: false,
-            }
+                touch: true,
+                click: false
+            },
+            // Disable counting of incremental slides in the slide counting
+            countIncrementalSlides: false
         });
+        window['slideshow'] = slideshow;
+        // extract the embedded styling from ansi spans
+        $('code.terminal span.hljs-ansi').replaceWith(function(i, x) {
+            x = x.replace(/&lt;(\/?(span).*?)&gt;/g, '<$1>');
+            return x;
+        });
+        // make all the outlinks open in a new tab
+        $('a[href^=http]').attr('target', '_blank');
     </script>
 </body>
 
