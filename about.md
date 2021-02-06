@@ -14,7 +14,8 @@ title: About
 >* Tmax Cloud CRM Team Researcher (2017.02 ~ 2017.07)
 >* Tmax Data Deep Learning Team Researcher (2017.08 ~ 2018.04)
 >* Tmax Data NLP Team Manager (2018.05 ~ 2019.03)
->* Tmax Data AI Dept1. Division Manager (2019.04 ~ )
+>* Tmax Data AI Dept1. Division Manager (2019.04 ~ 2021.01)
+>* Samsung Electronics Manufacturing Technology Center. CL2 (2021.02 ~ ) 
 
 * 보유기술
 >* Deep Learning
