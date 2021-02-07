@@ -26,7 +26,7 @@ title: About
 >* Linux
 
 * 논문, 저서
->* Simulation of neoclassical tearing mode stabilization via minimum seeking method on ITER (2015.10) - [한국 원자력학회 학술발표회 논문집](http://www.kns.org:8115/kns_files/36/16A-496박민호.pdf)
+>* Simulation of neoclassical tearing mode stabilization via minimum seeking method on ITER (2016.10) - [한국 원자력학회 학술발표회 논문집](https://www.kns.org/files/pre_paper/36/16A-496%EB%B0%95%EB%AF%BC%ED%98%B8.pdf)
 >* Effect of electron cyclotron beam width to neoclassical tearing mode stabilization by minimum seeking control in ITER (2017.12) - [Nuclear Fusion](http://iopscience.iop.org/article/10.1088/1741-4326/aa95d1/meta)
 
 * Projects
