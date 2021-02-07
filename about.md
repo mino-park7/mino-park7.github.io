@@ -15,7 +15,7 @@ title: About
 >* Tmax Data Deep Learning Team Researcher (2017.08 ~ 2018.04)
 >* Tmax Data NLP Team Manager (2018.05 ~ 2019.03)
 >* Tmax Data AI Dept1. Division Manager (2019.04 ~ 2021.01)
->* Samsung Electronics Manufacturing Technology Center. CL2 (2021.02 ~ ) 
+>* CL2 at Mechatronics R&D Center, Samsung Electronics, Korea (2021.02 ~ ) 
 
 * 보유기술
 >* Deep Learning
