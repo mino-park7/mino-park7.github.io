@@ -15,15 +15,17 @@ title: About
 >* Tmax Data Deep Learning Team Researcher (2017.08 ~ 2018.04)
 >* Tmax Data NLP Team Manager (2018.05 ~ 2019.03)
 >* Tmax Data AI Dept1. Division Manager (2019.04 ~ 2021.01)
->* CL2 at Mechatronics R&D Center, Samsung Electronics, Korea (2021.02 ~ ) 
+>* ML Engineer at Mechatronics R&D Center, Samsung Electronics, Korea (2021.02 ~ ) 
 
 * 보유기술
 >* Deep Learning
 >* Machine Learning
 >* Data Analysis
 >* Tensorflow
+>* Pytorch
 >* Python
 >* Linux
+>* Plasma Simulation
 
 * 논문, 저서
 >* Simulation of neoclassical tearing mode stabilization via minimum seeking method on ITER (2016.10) - [한국 원자력학회 학술발표회 논문집](https://www.kns.org/files/pre_paper/36/16A-496%EB%B0%95%EB%AF%BC%ED%98%B8.pdf)
@@ -37,3 +39,4 @@ title: About
 >* NH 투자증권 콜센터 데이터 음성인식 STT 개발총괄, TmaxAI, Korea (2020.01 ~ 2020.04)
 >* TeeSpace AI 챗봇 개발 총괄, Tmax AI, Korea (2019 ~)
 >* 경동 나비엔 OCR 및 object detection POC 프로젝트, TmaxAI, Korea (2019.12 ~ 2020.04)
+>* Deep Learning based Plasma Simulator 개발 (2021.02 ~ 2021.12)
