@@ -1,7 +1,7 @@
 ---
 layout: "post"
 title: "안정 해시 설계"
-date: "2022-01-03 23:14"
+date: "2022-01-03 22:14"
 category: System Design
 tag: [System Design]
 ---
@@ -16,8 +16,8 @@ tag: [System Design]
   - `serverIndex = hash(key) % N (N은 서버의 갯수)`
 - 위 방법은 서버 풀 (server pool)의 크기가 고정되어 있을 때, 그리고 데이터 분포가 균등할 때 잘 동작
 - 하지만 서버가 추가 or 삭제되면, 문제 발생
-    - moudular 값을 N -> N-1 or N+1 로 변경
-    - 기존 키가 대부분 재분배 -> 캐시 미스 발생
+  - moudular 값을 N -> N-1 or N+1 로 변경
+  - 기존 키가 대부분 재분배 -> 캐시 미스 발생
 
 ## 2. 안정 해시
 
@@ -33,6 +33,7 @@ tag: [System Design]
 - 해시 서버 f를 사용하면 서버 IP나 이름을 링 위의 어떤 위치에 대응 시킬 수 있다. (그림 5-5)
 
 ##### 해시 키
+
 - 캐시할 키 key0, key1, key2, key3또한 해시 링 위의 어느 지점에 배치 가능 (그림 5-6)
 
 ##### 서버 조회
