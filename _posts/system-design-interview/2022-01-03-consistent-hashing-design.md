@@ -89,3 +89,6 @@ tag: [System Design]
 - Discord 채팅 어플리케이션
 - Akamai CDM
 - Meglev 네트워크 부하 분산기
+
+## 참고자료
+- 알렉스 쉬, 가상 면접 사례로 배우는 대규모 시스템 설계 기초 5장
