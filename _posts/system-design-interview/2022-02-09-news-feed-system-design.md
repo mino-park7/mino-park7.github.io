@@ -1,7 +1,7 @@
 ---
 layout: "post"
 title: "뉴스피드 시스템 설계"
-date: "2022-01-10 22:14"
+date: "2022-02-09 22:14"
 category: System Design
 tag: [System Design]
 ---
