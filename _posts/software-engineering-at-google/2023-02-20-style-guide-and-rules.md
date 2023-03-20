@@ -2,7 +2,7 @@
 layout: "post"
 title: "8. 스타일 가이드와 규칙"
 date: "2023-02-20 22:14"
-category: System Design
+category: Software Engineering
 tag: [Software Engineering]
 ---
 

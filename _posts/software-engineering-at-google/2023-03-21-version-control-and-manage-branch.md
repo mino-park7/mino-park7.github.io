@@ -2,7 +2,7 @@
 layout: "post"
 title: "16. 버전 관리와 브랜치 관리"
 date: "2023-03-21 00:22"
-category: System Design
+category: Software Engineering
 tag: [Software Engineering]
 ---
 

@@ -2,7 +2,7 @@
 layout: "post"
 title: "10. 문서자료"
 date: "2023-02-20 23:22"
-category: System Design
+category: Software Engineering
 tag: [Software Engineering]
 ---
 

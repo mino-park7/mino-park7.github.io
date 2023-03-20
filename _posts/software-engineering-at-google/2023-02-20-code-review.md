@@ -2,7 +2,7 @@
 layout: "post"
 title: "8. 코드 리뷰"
 date: "2023-02-20 22:22"
-category: System Design
+category: Software Engineering
 tag: [Software Engineering]
 ---
 

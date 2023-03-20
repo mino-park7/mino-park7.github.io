@@ -2,7 +2,7 @@
 layout: "post"
 title: "15. 폐기"
 date: "2023-03-20 23:22"
-category: System Design
+category: Software Engineering
 tag: [Software Engineering]
 ---
 
