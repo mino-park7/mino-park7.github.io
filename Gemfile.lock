@@ -222,9 +222,11 @@ GEM
       i18n
     ruby2_keywords (0.0.5)
     ruby_dep (1.5.0)
+
     rubyzip (1.2.1)
     safe_yaml (1.0.5)
     sass (3.7.4)
+
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -239,7 +241,7 @@ GEM
     thread_safe (0.3.6)
     typhoeus (1.4.0)
       ethon (>= 0.9.0)
-    tzinfo (1.2.5)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     unf (0.1.4)
       unf_ext
