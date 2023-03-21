@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "8. 코드 리뷰"
+title: "9. 코드 리뷰"
 date: "2023-02-20 22:22"
 category: Software Engineering
 tag: [Software Engineering]
