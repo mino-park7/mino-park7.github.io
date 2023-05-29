@@ -434,6 +434,4 @@ tag: [Progmatic Programmer]
 - 화내고 욕하거나 논란을 부추기는 글을 보내지 말라
 - 보내기 전에 받는 사람 목록을 확인하라
 
-<p align="center">
-<img src='{{ "/assets/posts/paragmatic-programmer/chap1-map.png" | relative_url }}' alt='absolute'>
-</p>
+![Chapter1-map](https://mino-park7.github.io/assets/posts/paragmatic-programmer/chap1-map.png)
