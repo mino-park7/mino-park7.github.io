@@ -1,7 +1,7 @@
 ---
 layout: "post"
 title: "1. 실용주의 철학"
-date: "2023-05-29 21:22"
+date: "2023-05-29 21:22+0900"
 category: Progmatic Programmer
 tag: [Progmatic Programmer]
 ---
