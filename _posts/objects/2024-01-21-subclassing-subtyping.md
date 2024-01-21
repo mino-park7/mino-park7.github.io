@@ -61,9 +61,9 @@ tag: [Objects]
 
 ### 타입 사이의 포함관계
 
-![프로그래밍 언어 타입의 인스턴스 집합](https://mino-park7.github.io/assets/image/2024/01/IMG_5166.jpeg)
+![프로그래밍 언어 타입의 인스턴스 집합](https://mino-park7.github.io/assets/images/2024/01/IMG_5166.jpeg)
 
-![더 세분화된 타입을 부분집합화](https://mino-park7.github.io/assets/image/2024/01/IMG_5178.jpeg)
+![더 세분화된 타입을 부분집합화](https://mino-park7.github.io/assets/images/2024/01/IMG_5178.jpeg)
 
 - 프로그래밍 언어 타입은 객체지향 언어 타입과 절차적 언어 타입을 포함
 - 객체지향 언어 타입은 클래스 기반 언어 타입과 프로토타입 기반 언어 타입을 포함
@@ -73,7 +73,7 @@ tag: [Objects]
 - 포함하는 타입은 **외연 관점에서는 더 크고 내연 관점에서는 더 일반적**
 - 포함되는 타입은 **외연 관점에서는 더 작고 내연 관점에서는 더 특수함**
 
-![프로그래밍 언어 타입 계층](https://mino-park7.github.io/assets/image/2024/01/IMG_5179.jpeg)
+![프로그래밍 언어 타입 계층](https://mino-park7.github.io/assets/images/2024/01/IMG_5179.jpeg)
 
 - 타입 계층을 구성하는 두 타입 관계에서 더 일반적인 타입을 **슈퍼타입(supertype)**
 - 더 특수한 타입을 **서브타입(subtype)**
@@ -201,13 +201,13 @@ public void flyBird(FlyingBird bird) {
 - 만약 `Bird`가 날 수 있으면서 걸을 수도 있어야 하고, `Penguin`은 오직 걸을 수만 있다고 가정
 - 가장 좋은 방법은 `fly` 오퍼레이션을 가진 `Flyer` 인터페이스와 `walk` 오퍼레이션을 가진 `Walker` 인터페이스로 분리하는 것
 
-![클라이언트 기대에 따른 인터페이스 분리](https://mino-park7.github.io/assets/image/2024/01/IMG_5180.jpeg)
+![클라이언트 기대에 따른 인터페이스 분리](https://mino-park7.github.io/assets/images/2024/01/IMG_5180.jpeg)
 
 ---
 
 - 더 좋은 방법은 합성을 사용하는 것
 
-![합성을 이용한 코드 재사용](https://mino-park7.github.io/assets/image/2024/01/IMG_5181.jpeg)
+![합성을 이용한 코드 재사용](https://mino-park7.github.io/assets/images/2024/01/IMG_5181.jpeg)
 
 ---
 
@@ -272,7 +272,7 @@ public void flyBird(FlyingBird bird) {
 - 새로운 자식 클래스를 추가하더라도 클라이언트 입장에서 동일하게 행동하기만 한다면 클라이언트를 수정하지 않고도 상속 계층을 확장 할 수 있다
 - 클라이언트의 입장에서 퍼블릭 인터페이스의 행동 방식이 변경되지 않는다면 클라이언트의 코드를 변경하지 않고도 새로운 자식 클래스와 협력할 수 있다
 
-![DIP, LSP, OCP가 조합된 유연한 설계](https://mino-park7.github.io/assets/image/2024/01/IMG_5182.jpeg)
+![DIP, LSP, OCP가 조합된 유연한 설계](https://mino-park7.github.io/assets/images/2024/01/IMG_5182.jpeg)
 
 - **의존성 역전 원칙**
 - **리스코프 치환 원칙**
